@@ -1,0 +1,344 @@
+---
+import { getAllCarousel } from "../lib/api.js";
+import Container from "../../components/Container.astro";
+
+const seo = {
+  title: "Example Blog",
+  description:
+    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+};
+
+const allCarouselData = await getAllCarousel();
+// console.log(allCarouselData.length)
+
+// console.log(allCarouselData[0].mainImage.asset.url)
+const urlOne = allCarouselData[0].mainImage.asset.url;
+const urlTwo = allCarouselData[1].mainImage.asset.url;
+const urlThree = allCarouselData[2].mainImage.asset.url;
+const urlFour = allCarouselData[3].mainImage.asset.url;
+const urlFive = allCarouselData[4].mainImage.asset.url;
+
+const backgroundOne = `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)), url(${urlOne}) center center;`;
+const backgroundTwo = `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)), url(${urlTwo}) center center;`;
+const backgroundThree = `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)), url(${urlThree}) center center;`;
+const backgroundFour = `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)), url(${urlThree}) center center;`;
+const backgroundFive = `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)), url(${urlThree}) center center;`;
+---
+
+<div class="container">
+  <div class="carousel">
+    <div class="carousel-inner">
+      <input
+        class="carousel-open"
+        type="radio"
+        id="carousel-1"
+        name="carousel"
+        aria-hidden="true"
+        hidden=""
+        checked="checked"
+      />
+      <div class="carousel-item">
+        <div className="text">
+          <p>Hello</p>
+          <h1>Again this is the title</h1>
+        </div>
+      </div>
+      <input
+        class="carousel-open"
+        type="radio"
+        id="carousel-2"
+        name="carousel"
+        aria-hidden="true"
+        hidden=""
+      />
+      <div class="carousel-item">
+        <div className="text">
+          <p>Hello</p>
+          <h1>Again this is the title</h1>
+        </div>
+      </div>
+      <input
+        class="carousel-open"
+        type="radio"
+        id="carousel-3"
+        name="carousel"
+        aria-hidden="true"
+        hidden=""
+      />
+      <div class="carousel-item">
+        <div className="text">
+          <p>Hello</p>
+          <h1>Again this is the title</h1>
+        </div>
+      </div>
+
+      <input
+        class="carousel-open"
+        type="radio"
+        id="carousel-4"
+        name="carousel"
+        aria-hidden="true"
+        hidden=""
+      />
+      <div class="carousel-item">
+        <div className="text">
+          <p>Hello</p>
+          <h1>Again this is the title</h1>
+        </div>
+      </div>
+
+      <input
+        class="carousel-open"
+        type="radio"
+        id="carousel-5"
+        name="carousel"
+        aria-hidden="true"
+        hidden=""
+      />
+      <div class="carousel-item">
+        <div className="text">
+          <p>Hello</p>
+          <h1>Again this is the title</h1>
+        </div>
+      </div>
+
+      <label for="carousel-5" class="carousel-control prev control-1">‹</label>
+      <label for="carousel-4" class="carousel-control next control-1">›</label>
+      <label for="carousel-3" class="carousel-control prev control-2">‹</label>
+      <label for="carousel-2" class="carousel-control next control-2">›</label>
+      <label for="carousel-1" class="carousel-control prev control-3">‹</label>
+      <label for="carousel-5" class="carousel-control prev control-3">‹</label>
+      <label for="carousel-4" class="carousel-control next control-4">›</label>
+      <label for="carousel-3" class="carousel-control next control-4">›</label>
+      <label for="carousel-2" class="carousel-control prev control-5">‹</label>
+      <label for="carousel-1" class="carousel-control next control-5">›</label>
+      <ol class="carousel-indicators">
+        <li>
+          <label for="carousel-1" class="carousel-bullet">•</label>
+        </li>
+        <li>
+          <label for="carousel-2" class="carousel-bullet">•</label>
+        </li>
+        <li>
+          <label for="carousel-3" class="carousel-bullet">•</label>
+        </li>
+        <li>
+          <label for="carousel-4" class="carousel-bullet">•</label>
+        </li>
+        <li>
+          <label for="carousel-5" class="carousel-bullet">•</label>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<style
+  define:vars={{
+    backgroundOne,
+    backgroundTwo,
+    backgroundThree,
+    backgroundFour,
+    backgroundFive,
+  }}
+>
+  html,
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 600px;
+  }
+
+  .carousel {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin: 26px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 1000px;
+  }
+
+  .carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+  }
+
+  .carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+    overflow: hidden;
+  }
+
+  .carousel-item:nth-of-type(1) {
+    background: var(--backgroundOne);
+  }
+
+  .carousel-item:nth-of-type(2) {
+    background: var(--backgroundTwo);
+  }
+
+  .carousel-item:nth-of-type(3) {
+    background: var(--backgroundThree);
+  }
+
+  .carousel-item:nth-of-type(4) {
+    background: var(--backgroundFour);
+  }
+
+  .carousel-item:nth-of-type(5) {
+    background: var(--backgroundFive);
+  }
+
+  .carousel-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .carousel-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+  }
+
+  .carousel-control.prev {
+    left: 2%;
+  }
+
+  .carousel-control.next {
+    right: 2%;
+  }
+
+  .carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+  }
+
+  #carousel-1:checked ~ .control-1,
+  #carousel-2:checked ~ .control-2,
+  #carousel-3:checked ~ .control-3,
+  #carousel-4:checked ~ .control-4,
+  #carousel-5:checked ~ .control-5 {
+    display: block;
+  }
+
+  .carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .carousel-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+  }
+
+  .carousel-bullet:hover {
+    color: #aaaaaa;
+  }
+
+  #carousel-1:checked
+    ~ .control-1
+    ~ .carousel-indicators
+    li:nth-child(1)
+    .carousel-bullet,
+  #carousel-2:checked
+    ~ .control-2
+    ~ .carousel-indicators
+    li:nth-child(2)
+    .carousel-bullet,
+  #carousel-3:checked
+    ~ .control-3
+    ~ .carousel-indicators
+    li:nth-child(3)
+    .carousel-bullet,
+  #carousel-4:checked
+    ~ .control-4
+    ~ .carousel-indicators
+    li:nth-child(4)
+    .carousel-bullet,
+  #carousel-5:checked
+    ~ .control-5
+    ~ .carousel-indicators
+    li:nth-child(5)
+    .carousel-bullet {
+    color: #428bca;
+  }
+
+  #title {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Open Sans", sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33),
+      -1px 0px 2px rgba(255, 255, 255, 0);
+  }
+
+  .text {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+  }
+
+  p {
+    color: white;
+    font-size: 1.25em;
+    margin-bottom: 0;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+  }
+
+  h1 {
+    margin-top: 0;
+    color: #05a0e3;
+    font-size: 5em;
+  }
+</style>

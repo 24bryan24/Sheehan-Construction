@@ -1,0 +1,212 @@
+---
+
+//Logo
+import LogoBlack from './LogoBlack'
+
+---
+
+      <nav style={{ "--color": "white" }}>
+        <div class="container">
+          <div class="nav-items">
+            <div class="logo">
+              <a>
+                <LogoBlack />
+              </a>
+            </div>
+
+            <div class="menu">
+              <ul>
+                <li>
+                  <a>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    Portfolio
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div
+<<<<<<< HEAD
+              class="mobile-menu-icon"
+=======
+              className="mobile-menu-icon"
+>>>>>>> 61c70e78b187475ce96c63e083d46f32f6ca0eed
+              onClick={() => props.openMobileMenu()}
+            >
+            
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <style lang="scss">
+      $mainColor : #f3f305;
+
+.bladeSVG {
+    fill: black !important;
+}
+
+nav{
+    // overflow-x: hidden;
+    padding: .5em 0 0 0;
+    position: fixed;
+    z-index: 10;
+    background-color: var(--color);
+    width: 100%;
+
+    h3{
+        margin:0;
+    }
+
+    .logo{
+        position: relative;
+        font-size: .7em;
+
+        .bladeImg {
+            transform-origin: center;
+        }
+    }
+
+    .nav-items{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .mobile-menu-icon{
+            display:none;
+        }
+
+        .language{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            transition: 0.10s ease-in-out;
+
+            .globe{
+                color:lighten(black,70%);
+            }
+
+            .angleDown{
+                font-size: 0.6em;
+            }
+
+            &:hover{
+                color: black;
+                cursor: pointer;
+            }
+
+            p{
+                margin:0 0.2em;
+                color: black;
+            }
+        }
+
+        .menu ul{
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+
+            li{
+                display: inline-block;
+                margin: 0 1.5em;
+                color: black;
+                font-weight: 400;
+
+                a{
+                    color: black;
+                    text-decoration: none;
+                    position: relative;
+
+                    &.active{
+                        color:$mainColor;
+                    }
+                }
+
+                a:after{
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    left: 0;
+                    bottom: -5px;
+                    background-color: $mainColor;
+                    width: 0;
+                    height: 2px;
+                    transition: all 0.4s;
+                }
+                
+                a:hover:after{
+                    width: 100%;
+                }
+            }
+        }
+
+        .rental{
+            .activeRental{
+                color: white;
+                background-color: $mainColor;
+
+                &::after{
+                    display: none;
+                }
+            }
+
+            a{
+                border: .12em solid $mainColor;
+                padding: 0.35em 1em;
+                color: $mainColor;
+                text-decoration: none;
+                position: relative;
+                background-color: white;
+    
+                &:hover{
+                    background-color: $mainColor;
+                    color:white;
+                }
+    
+                &::after{
+                    content: '';
+                    width: 15px;
+                    height: 2px;
+                    background-color: $mainColor;
+                    position: absolute;
+                    top:47%;
+                    right: -2.5%;
+                }
+            }
+        }
+
+    }
+
+    /*Media queries*/
+    @media screen and (max-width:1100px){
+        .nav-items{
+            justify-content: space-between;
+
+            .menu,.language,.rental{
+                display: none;
+            }
+
+            .mobile-menu-icon{
+                display: block;
+                color:$mainColor;
+                font-size: 2em;
+            }
+        }
+    }
+
+}
+      </style>

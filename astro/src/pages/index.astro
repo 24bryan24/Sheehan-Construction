@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Page.astro";
+import Container from "../components/Container.astro";
+import CarouselTwo from "../components/CarouselTwo.astro";
+import App from "../components/App.jsx";
+
+import Carousel from "../components/Carousel.jsx";
+import "../components/App.scss";
+import "../components/Home.scss";
+
+import { getAbout } from "../lib/api.js";
+const aboutData = await getAbout();
+const companyName = aboutData[0].title;
+const aboutHomePageBody = aboutData[1].body[0].children[0].text;
+const aboutPageBody = aboutData[0].body[0].children[0].text;
+// console.log(aboutHomePageBody, aboutPageBody);
+
+import { getAllCarousel } from "../lib/api.js";
+const carouselData = await getAllCarousel();
+
+// console.log(carouselData[0].mainImage.asset.url);
+
+import { getAllPortfolio } from "../lib/api.js";
+const portfolioData = await getAllPortfolio();
+
+// console.log(portfolioData[0].mainImage.asset.url);
+
+const seo = {
+  title: "Welcome to Sheehan Construction",
+  description:
+    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+};
+---
+
+<Layout seo={seo}>
+  <Container />
+  <div class="App" style={{ "--color": "black" }}>
+    <div class="wrapper">
+      <div class="page">
+        <div class="homeView">
+          <Carousel client:load carouselData={carouselData} />
+        </div>
+      </div>
+    </div>
+  </div>
+  <App
+    client:visible
+    carouselData={carouselData}
+    companyName={companyName}
+    aboutHomePageBody={aboutHomePageBody}
+    portfolioData={portfolioData}
+  />
+</Layout>

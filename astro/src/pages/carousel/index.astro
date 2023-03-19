@@ -1,0 +1,20 @@
+---
+// Component Imports
+import Layout from "../../layouts/Page.astro";
+import CarouselTwo from "../../components/CarouselTwo.astro";
+import Container from "../../components/Container.astro";
+import App from "../components/App.jsx";
+
+const seo = {
+  title: "Welcome to Sheehan Construction",
+  description:
+    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+};
+---
+
+<Layout seo={seo}>
+  <Navbar />
+  <Navigation />
+  <Container />
+  <CarouselTwo />
+</Layout>

@@ -1,0 +1,412 @@
+$mainColor : #05a0e3;
+
+//View background
+.aboutView{
+    background-image:
+        url('../Img/Background/wave3.svg'),
+        url('../Img/Background/wave4.svg');
+
+    background-position:
+        top 0% left 0%,
+        top 60% left 0%;
+
+    background-repeat: no-repeat;
+
+    /*Abous us*/
+    .aboutUs{
+        position: relative;
+        z-index: 1;
+
+        .company-name {
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .golden-rule{
+            color: #f3f305;
+        }
+
+        .text{
+            margin-left: 2.5em;
+            max-width: 600px;
+        }
+
+        #triangle{
+            fill:none;
+            stroke:$mainColor;
+            stroke-width: .3;
+            width: 250px;
+            position: absolute;
+            top:7%;
+            right:7%;
+            transform: rotate(-50deg);
+        }
+
+        #square{
+            fill:none;
+            stroke:$mainColor;
+            stroke-width: .3;
+            position: absolute;
+            right: 25%;
+            bottom: -30%;
+            z-index: -1;
+            width: 250px;
+            transform: rotate(-10deg);
+        }
+    }
+
+    /*What we do*/
+    .whatWeDo{
+        z-index: 1;
+        position: relative;
+
+        #square{
+            fill:none;
+            stroke:$mainColor;
+            stroke-width: .5;
+            position: absolute;
+            left: -15%;
+            top:50%;
+            z-index: -1;
+            width: 130px;
+            transform: rotate(20.5deg);
+        }
+
+        #circle{
+            fill:none;
+            stroke:$mainColor;
+            stroke-width: .8;
+            position: absolute;
+            right: -5%;
+            bottom:0;
+            z-index: -1;
+            width: 50px;
+        }
+
+        .card-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 7em;
+
+            .card{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 48.5%;
+                padding: 4em 3em;
+                box-sizing: border-box;
+                border-radius: 0.5em;
+                -webkit-box-shadow: 0px 3px 15px -4px rgba(0,0,0,0.55); 
+                box-shadow: 0px 3px 15px -4px rgba(0,0,0,0.55);
+                margin: 1em 0;
+                background-color: white;
+
+                p{
+                    margin:1em 0 0 0;
+                }
+
+                #icon{
+                    width: 90px;
+                }
+            }
+
+            .card:nth-of-type(5){
+                #icon{
+                    margin-left: 2em;
+                }
+            }
+
+            .card:nth-of-type(1),.card:nth-of-type(4),.card:nth-of-type(5){
+                color:$mainColor;
+            }
+
+            .card:nth-of-type(2),.card:nth-of-type(3),.card:nth-of-type(6){
+                background-color: $mainColor;
+                color:white;
+            }
+        }
+
+        /*SVG stylings*/
+        #building{
+            .st0{display:none;}
+            .st1{fill:#FFFFFF;stroke:#05A0E3;stroke-width:3;stroke-miterlimit:10;}
+            .st2{fill:#05A0E3;}
+        }
+
+        #excavator{
+            .st3{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;stroke-width: 3;}
+            .st4{fill:#FFFFFF;}
+            .st5{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+            .st6{fill:#05A0E3;}
+        }
+
+        #wrench{
+            .st6{fill:none;stroke:#FFFFFF;stroke-miterlimit:10; stroke-width: 3;}
+            .st7{fill:#FFFFFF;}
+            .st8{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+            .st9{fill:#05A0E3;stroke:#FFFFFF;stroke-miterlimit:10; stroke-width: 0;}
+        }
+
+        #painter{
+            .st7{fill:none;stroke:#05A0E3;stroke-miterlimit:10;stroke-width: 3;}
+            .st8{fill:$mainColor;}
+        }
+
+        #spray{
+            .st8{fill:none;stroke:#05A0E3;stroke-miterlimit:10; stroke-width: 3;}
+            .st9{fill:#05A0E3;}
+        }
+
+        #shield{
+            .st0{display:none;}
+            .st1{display:inline;fill:#FFFFFF;stroke:#05A0E3;stroke-width:5.6693;stroke-miterlimit:10;}
+            .st2{display:inline;fill:#05A0E3;}
+            .st3{display:inline;fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+            .st4{display:inline;fill:#FFFFFF;}
+            .st5{display:inline;fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+            .st6{display:inline;fill:#05A0E3;stroke:#FFFFFF;stroke-miterlimit:10;}
+            .st7{display:inline;fill:none;stroke:#05A0E3;stroke-miterlimit:10;}
+            .st8{fill:#FFFFFF;}
+            .st9{fill:#05A0E3;}
+        }
+    }
+
+    /*Our Standards*/
+    .ourStandards{
+        .text{
+            max-width: 600px;
+        }
+
+        .standard-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin:0 auto;
+            margin-top: 2.5em;
+
+            .standard{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-shrink: 0;
+                border-radius: 0.5em;
+                -webkit-box-shadow: 0px 3px 15px -4px rgba(0,0,0,0.55); 
+                box-shadow: 0px 3px 15px -4px rgba(0,0,0,0.55);
+                margin: 1em 0;
+                padding: 2em;
+                width: 85%;
+                background-color: white;
+                box-sizing: border-box;
+
+                .standard-text{
+                    margin-left: 1em;
+
+                    h4{
+                        color:$mainColor;
+                        margin: 0 0 .3em 0 ;
+                        font-size: 1.4em;
+                    }
+
+                    p{
+                        margin:0;
+                    }
+
+                }
+
+                #standard{
+                    width: 60px;
+                    margin-right: 1em;
+                }
+
+                /*SVG Stylings*/
+                #standard1{
+                    .st8{fill:#05A0E3;}
+                }
+
+                #standard2{
+                    .st8{fill:#05A0E3;}
+                    .st9{fill:#FFFFFF;}
+                }
+
+                #standard3{
+                    .st8{fill:#05A0E3;}
+                }
+
+                #standard4{
+                    .st8{fill:#05A0E3;}
+                    .st9{fill:#FFFFFF;}
+                }
+            }
+        }
+    }
+}
+
+/*Media queries*/
+@media screen and (min-width:1550px){
+    .aboutView{
+        background: none !important;
+    }
+}
+
+@media screen and (max-width:1100px){
+    .aboutView{
+        .aboutUs{
+            #triangle{
+                width: 180px;
+                top:-8%;
+            }
+
+            #square{
+                width: 130px;
+                bottom:-20%;
+            }
+        }
+
+        .whatWeDo{
+            .card-container{
+                margin-top: 3em;
+
+                .card{
+                    padding: 2em 2em;
+                    box-sizing: border-box;
+                    text-align: center;
+                }
+            }
+        }
+
+        .ourStandards{
+            .standard-container{
+                .standard{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:830px){
+    .aboutView{
+        background-position: 
+        top 0% left 0,
+        top 80% left 0 !important;
+
+        background-size: 
+            120%,
+            150% !important;
+
+        .aboutUs{
+            .text{
+                margin-left: 0;
+            }
+
+            #triangle{
+                width: 140px;
+                top:-4%;
+            }
+
+            #square{
+                width: 100px;
+            }
+        }
+
+        .ourStandards{
+            .standard-container{
+                .standard{
+                    .standard-text{
+                        h4{
+                            font-size: 1.2em;
+                        }
+                    }
+         
+                    #standard{
+                        min-width: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:550px){
+	.aboutView{ 
+        background: none;
+
+        .aboutUs{
+            #triangle{
+                width: 100px;
+                top:-2%;
+            }
+
+            #square{
+                width: 80px;
+                right: 0;
+                bottom: -10%;
+            }
+        }
+
+        .whatWeDo{
+            .card-container{
+                flex-direction: column;
+
+                .card{
+                    width: 100%;
+                    padding: 1.5em;
+                }
+
+                .card:nth-of-type(3){
+                    color:$mainColor;
+                    background-color: white;
+
+                    #wrench{
+                        .st6{fill:none;stroke:$mainColor;stroke-miterlimit:10; stroke-width: 3;}
+                        .st7{fill:$mainColor;}
+                        .st8{fill:$mainColor;stroke:$mainColor;stroke-miterlimit:10;}
+                        .st9{fill:white;stroke:$mainColor;stroke-miterlimit:10; stroke-width: 0;}
+                    }
+                }
+
+                .card:nth-of-type(4){
+                    background-color: $mainColor;
+                    color: white;
+
+                    #painter{
+                        .st7{fill:none;stroke:white;stroke-miterlimit:10;stroke-width: 3;}
+                        .st8{fill:white;}
+                    }
+                }
+            }
+        }
+
+        .ourStandards{
+            .standard-container{
+                .standard{
+                    flex-direction: column;
+                    padding: 1.5em;
+
+                    .standard-text{
+                        margin-left: 0;
+
+                        h4{
+                            font-size: 1.2em;
+                        }
+                    }
+         
+                    #standard{
+                        min-width: 80px;
+                        margin-bottom: 1.5em;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

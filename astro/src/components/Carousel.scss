@@ -1,0 +1,115 @@
+$mainColor : #05a0e3;
+
+.slider-main{
+    width: 100%;
+
+    .slide{
+        width: 100%;
+        height: 600px;
+        position: relative;
+        outline: none;
+
+        .text{
+            position: absolute;
+            top: 30%;
+            left: 10%;
+
+            p{
+                color:white;
+                font-size: 1.25em;
+                margin-bottom: 0;
+                -webkit-text-stroke-width: 2px;
+                    -webkit-text-stroke-color: black;
+            }
+
+            h1{
+                margin-top:0;
+                color:$mainColor;
+                font-size: 5em;
+            }
+        }
+    }
+
+        .slide {
+                // position: relative;
+                // overflow: hidden;
+                // background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)),
+                //             url("../Img/images/living-room-makeover.jpg") center center
+                //             ;
+            img {
+                    object-fit: scale-down;
+                    position: absolute;
+                    top: -60%;
+                    left: 0px;
+                    object-position: center center;
+                }
+        }
+        // .slide-1 {
+        //     // background:linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)), 
+        //     // url("../Img/images/living-room-makeover.jpg") center center
+        //     // ;
+        //         position: relative;
+        //     img {
+        //             // object-fit: scale-down;
+        //             position: absolute;
+        //             top: -850px;
+        //             left: 0px;
+        //             object-position: center center;
+        //         }
+        // }
+    
+        // .slide-2 {
+        //     background:linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.35)), url('../Img/images/new-flooring-throughout.jpg') center center;
+        // }
+    
+        // .slide-3 {
+        //     background:linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../Img/images/poway-kitchen-remodel-with-island-seating.jpg') center center;
+        // }
+    
+    .slick-dots{
+        bottom: 15%;
+
+        li{
+            margin: 0 1em;
+        }
+        
+
+        li button:before{
+            font-size: 20px;
+            color:white;
+            opacity: 1;
+            content: '▬▬';
+        }
+    
+        .slick-active{
+            button::before{
+                color:$mainColor !important;
+                opacity: 1 !important;
+            }
+        }
+    }
+
+    /*Media queries - MOBILE*/
+    @media screen and (max-width:500px){
+        .slide{
+            height: 400px !important;
+            background-size: cover;
+
+            .text{
+                top: 20%;
+                left: 5%;
+
+                h1{
+                    font-size: 4em !important;
+                }
+            }
+
+        }
+
+        .slick-dots{
+            bottom: 5%;
+        }
+
+    }
+}
+

@@ -1,0 +1,25 @@
+---
+import About from "../../components/About.jsx";
+import "../../components/App.scss";
+import Layout from "../../layouts/Page.astro";
+import Container from "../../components/Container.astro";
+import { getAbout } from "../../lib/api.js";
+
+const seo = {
+  title: "About - Sheehan Construction",
+  description:
+    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+};
+
+const aboutData = await getAbout();
+const aboutBody = aboutData[0].body[0].children[0].text;
+const aboutCompany = aboutData[0].title;
+// console.log(aboutCompany);
+---
+
+<Layout seo={seo}>
+  <Container />
+  <div class="page">
+    <About aboutBody={aboutBody} aboutCompany={aboutCompany} />
+  </div>
+</Layout>

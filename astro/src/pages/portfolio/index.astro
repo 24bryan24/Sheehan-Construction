@@ -1,0 +1,31 @@
+---
+import Portfolio from "../../components/Portfolio.jsx";
+import "../../components/App.scss";
+import Layout from "../../layouts/Page.astro";
+import Container from "../../components/Container.astro";
+
+const seo = {
+  title: "Projects by Sheehan Construction",
+  description:
+    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+};
+
+import { getAllCarousel } from "../../lib/api.js";
+import { getAllPortfolio } from "../../lib/api.js";
+
+const carouselData = await getAllCarousel();
+const portfolioData = await getAllPortfolio();
+
+// console.log(carouselData[0]);
+---
+
+<Layout seo={seo}>
+  <Container />
+  <div class="page">
+    <Portfolio
+      client:idle
+      portfolioData={portfolioData}
+      carouselData={carouselData}
+    />
+  </div>
+</Layout>

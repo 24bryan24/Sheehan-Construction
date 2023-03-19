@@ -1,0 +1,65 @@
+$mainColor : #05a0e3;
+
+.portfolioItemSlider{
+    .slider{
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    
+    .slide{
+        .image{
+            margin: 0 -10px;
+            padding:0 15px;
+
+
+            img{
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: .5em;
+            }
+        }
+    }
+
+    #nextSlide,#prevSlide{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        fill: $mainColor;
+        background-color: white;
+        border-radius: 50%;
+    }
+    
+    #nextSlide{
+        right: -15px;
+    }
+    
+    #prevSlide{
+        left: -15px;
+    }
+    
+    .slick-next::before{
+        content: '';
+    }
+    
+    .slick-prev::before{
+        content: '';
+    }
+}
+
+/*Media queries*/
+@media screen and (max-width:425px){
+    .portfolioItemSlider{
+        #prevSlide,#nextSlide{
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+
+
+

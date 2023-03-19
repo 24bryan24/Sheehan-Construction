@@ -1,0 +1,311 @@
+$mainColor : #05a0e3;
+
+
+.contactView{
+    background: url('../Img/Background/excavator-background.png') no-repeat;
+    background-position-y:100%;
+    background-position-x:100%;
+    background-size: 40%;
+    position: relative;
+
+    /*Contact form section*/
+    .contactForm{
+        position: relative;
+
+        #square{
+            top:5%;
+            right: 5%;
+            width: 250px;
+            transform: rotate(70deg);
+            fill:none;
+            stroke:$mainColor;
+            stroke-width: .2;
+            position: absolute;
+            z-index: -1;
+        }
+
+        h2{
+            margin-bottom: 1.8em;
+        }
+        
+        .wrapper{
+            display: flex;
+            flex-flow:row wrap;
+            justify-content:space-between;
+
+            .info{
+                width: 35%;
+                padding: 2em;
+                min-width:180px;
+                max-width: 330px;
+                background-color: $mainColor;
+                color:white;
+                border-radius: .5em;
+
+                p{
+                    line-height: 0.45em;
+                    font-weight: 300;
+                    margin-bottom: 0.4em;
+                }
+                
+                .column{
+                    &:nth-of-type(2),&:nth-of-type(3){
+                        margin-top: 2em;
+                    }
+
+                    .heading{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-size: 1.1em;
+
+                        .inside-button {
+                            width: 20px;
+                            height: 20px;
+                            color: white;
+                          }
+
+                          .inside-button-send {
+                            width: 15px;
+                            height: 15px;
+                            color: white;
+                          }
+    
+                        h4{
+                            margin-left: .5em;
+                            margin-top:0.1em;
+                            margin-bottom:0;
+                            font-size: 1.1em;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+
+            .form{
+                width: 40%;
+                min-width: 300px;
+				max-width: 500px;
+				box-sizing: border-box;
+
+                input,textarea{
+                    padding: .8em;
+                    font-size: 1em;
+                    display: block;
+                    width: 100%;
+                    box-sizing: border-box;
+                    border:0.09em solid #ccc;
+                    border-radius: .3em;
+                    outline: none;
+                    font-family: inherit;
+                    -webkit-box-shadow: 0px 2px 7px -5px #000000; 
+                    box-shadow: 0px 2px 7px -5px #000000;
+					margin: 1em 0;
+                }
+
+                textarea{
+                    height: 10em;
+                }
+
+                input:first-of-type{
+                    margin-top: 0;
+                }
+
+                .send{
+                    background-color: $mainColor;
+                    color: white;
+                    width: auto;
+                    display: inline-block;
+                    margin-top: 1.5em;
+                    padding: 1em 3em;
+                    -webkit-box-shadow: 0px 2px 7px -5px #000000; 
+                    box-shadow: 0px 2px 7px -5px #000000;
+                    border-radius: .3em;
+
+                    a{
+                        color:white;
+                        text-decoration: none;
+                        position: relative;
+                        margin-left: 0.5em;
+
+                        &::after{
+                            content: '';
+                            width: 25px;
+                            height: 1px;
+                            background-color: black;
+                            position: absolute;
+                            top:47%;
+                            right: -100%;
+                        }
+                    }
+                    
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    } 
+    
+    /*Rental section*/
+    .rental{
+        width:100%;
+        margin: 0 auto;
+
+        h2{
+            margin-bottom: 0.6em;
+        }
+
+        h1{
+            font-size: 5em;
+            margin:0;
+            color:$mainColor;
+            margin-left: 40px;
+        }
+
+        p{
+            margin-left: 40px;
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+    }
+}
+
+/*Media queries*/
+@media screen and (min-width:1550px){
+    .contactView{
+        background: none !important;
+    }
+}
+
+@media screen and (max-width:1100px){
+    .contactView{
+        .rental{
+            h1{
+                font-size: 4em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:830px){
+    .contactView{
+        .contactForm{
+            h2{
+                margin-bottom: 1em;
+            }
+
+            #square{
+                top: 40%;
+                right: -20%;
+                width: 200px;
+            }
+    
+            .wrapper{
+                flex-direction: column;
+    
+                .info{
+                    width: 100%;
+                    max-width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 1em;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    box-sizing: border-box;
+                    .column{
+                        margin-top: 0 !important;
+                        margin:0.5em;
+                    }
+                }
+    
+                .form{
+                    width: 100%;
+                    margin-top: 2em;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .rental{
+            h1,p{
+                margin-left: 0;
+            }
+
+            h1{
+                margin-bottom: 0;
+            }
+
+            p{
+                margin:0;
+            }
+
+            h3{
+                margin-bottom: 0.2em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:575px){
+    .contactView{
+        .rental{
+            h1{
+                font-size: 2.95em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:425px){
+    .contactView{
+        .contactForm{
+            .wrapper{
+                .info{
+					flex-direction: column;
+
+                    .column{
+                        margin: 0.5em;
+					}
+					
+					.column:nth-child(2){
+						margin-top: .5em !important;
+						margin-bottom: 1em !important;
+					}
+        
+				}
+				
+				.form{
+					min-width: 100%;
+
+					.send{
+						width: 100%;
+						box-sizing: border-box;
+						text-align: center;
+						position: relative;	
+
+						a::after{
+							display: none;
+						}
+					}
+				}
+            }
+        }
+
+        .rental{
+            h1{
+                font-size: 2.5em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:360px){
+    .contactView{
+        .rental{
+            h1{
+                font-size: 2em;
+            }
+        }
+    }
+}

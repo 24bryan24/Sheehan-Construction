@@ -1,0 +1,40 @@
+---
+import Layout from "./Base.astro";
+import type { Props as BaseHeadProps } from "../components/BaseHead.astro";
+import Header from "../components/Navigation.jsx";
+import Footer from "../components/Footer.jsx";
+
+export interface Props {
+  seo?: BaseHeadProps;
+}
+
+const { seo } = Astro.props as Props;
+
+import { getContact } from "../lib/api.js";
+const contactData = await getContact();
+const workingArea = contactData[0].area;
+const email = contactData[0].email;
+const established = contactData[0].established;
+const name = contactData[0].name;
+const phone = contactData[0].phone;
+// console.log(workingArea, email, established, name, phone);
+
+import { getAbout } from "../lib/api.js";
+const aboutData = await getAbout();
+const companyName = aboutData[0].title;
+// console.log(companyName);
+---
+
+<Layout seo={seo}>
+  <Header slot="header" />
+  <slot />
+  <Footer
+    slot="footer"
+    phone={phone}
+    name={name}
+    established={established}
+    email={email}
+    workingArea={workingArea}
+    companyName={companyName}
+  />
+</Layout>

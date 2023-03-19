@@ -1,0 +1,612 @@
+$mainColor : #05a0e3;
+
+//View background
+.homeView{
+    background-image:
+        url('../Img/Background/wave.svg'),
+        url('../Img/Background/wave2.svg');
+
+    background-position:
+        top 32% left 0%,
+        top 80% left 0%;
+
+	background-repeat: no-repeat;
+
+	background-size: 100%;
+	
+
+    /*Rental offer*/
+    .rentalOffer{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 75%;
+        background-color: $mainColor;
+        padding: .5em;
+        margin: 0 auto;
+        border-radius: 0.2em;
+        transform: translateY(-55%);
+        
+        p{
+            color:white;
+            font-weight: 400;
+            font-size: 1.1em;
+        }
+
+        a{
+            text-decoration: none;
+            color:white;
+            font-weight: 300;
+            padding: .5em 2em;
+            font-size: 1.1em;
+            border: 0.05em solid white;
+            border-radius: 0.2em;
+            transition: 0.1s ease-in-out;
+            position: relative;
+
+            &:hover{
+                background-color: white;
+                color:$mainColor;
+            }
+
+            &::after{
+                content: '';
+                width: 15px;
+                height: 1px;
+                background-color: white;
+                position: absolute;
+                top:50%;
+                right: -4.5%;
+            }
+        }
+    }
+
+    /*About us*/
+    .aboutUs{   
+        position: relative;
+        margin-top: 1em;
+        margin-bottom: 2em;
+        .golden-rule{
+            color: #f3f305;
+        }
+
+        .text{
+            margin-left: 2.5em;
+            max-width: 500px;
+        
+            a{
+                text-decoration: none;
+                color:black;
+            }
+
+            .showMore{
+                display: inline-block;
+                border-bottom: 1px solid white;
+
+                span{
+                    margin-left: .5em;
+                }
+
+                &:hover{
+                    border-bottom:1px solid black;
+                }
+            }
+        }
+
+        #square{
+            top: 40%;
+            right: 10%;
+            width: 180px;
+        }
+    }
+
+    /*Certificates*/
+    .certificates{
+        .card-container{
+            display: flex;
+            justify-content: space-between;
+            flex-flow:row wrap;
+            margin-top: 7em;
+
+            .card{
+                flex-basis: calc(100% / 4);
+                flex-shrink: 0;
+                min-width: 170px;
+                background-color:white;
+                padding: 1.5em;
+                border-radius: .5em;
+                -webkit-box-shadow: 0px 3px 15px -4px rgba(0,0,0,0.55); 
+                box-shadow: 0px 3px 15px -4px rgba(0,0,0,0.55);
+
+                h4{
+                    color:$mainColor;
+                    margin: 0;
+                }
+
+                p{
+                    font-size: .9em;
+                    margin-top: 0;
+                }
+
+                img{
+                    display: block;
+                    margin: 3em auto;
+                    width: 50%;
+                }
+
+                .box{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                a{
+                    color:$mainColor;
+                    text-decoration: none;
+                    text-align: center;
+                    margin: 0 auto;
+                    width: 60%;
+                    box-sizing: border-box;
+                    padding: .5em;
+                    border:0.15em solid $mainColor;
+                    border-radius: 0.3em;
+                    transition: .1s ease-in-out;
+                    position: relative;
+
+                    &:hover{
+                        background-color: $mainColor;
+                        color:white;
+                    }
+
+                    &::after{
+                        content: '';
+                        width: 15px;
+                        height: 2px;
+                        background-color: $mainColor;
+                        position: absolute;
+                        top:47%;
+                        right: -3.5%;
+                    }
+                }
+
+                .showMore{
+                    display:flex;
+                    justify-content: center;
+                    margin-top: 0.5em;
+                    font-size: 0.8em;
+
+                    a{  
+                        transition: none;
+                        border: none;
+                        border-radius: 0;
+                        text-decoration: none;
+                        border-bottom: 1px solid white;
+                        color:black;
+                        padding: 0;
+                        width: inherit;
+
+                        &:hover{
+                            border-bottom: 1px solid black;
+                            background-color: white;
+                        }
+
+                        &::after{
+                            width: 0px;
+                            height: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*Portfolio*/
+    .portfolio{
+        background: none;
+        position: relative;
+
+        #square{
+            top:5%;
+            right: 35%;
+            width: 160px;
+            transform: rotate(40deg);
+        }
+
+        h4{
+            margin-top: 1em;
+            margin-bottom: 1.8em;
+        }
+    }
+
+    /*All works*/
+    .allWorks{
+        background:linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)),url('../assets/images/Kitchen.jpg') center center;
+        background-size: cover;
+        text-align: center;
+        position: relative;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h3{
+            margin-top: 0;
+            color:white;
+        }
+
+        a{
+            color:white;
+            text-decoration: none;
+            background-color: $mainColor;
+            border-radius: .3em;
+            padding: .8em 2em;
+            display: inline-block;            
+            font-weight: 300;
+            position: relative;
+
+            &::after{
+                position: absolute;
+                top: 50%;
+                right: -2.5%;
+                content: '';
+                width: 15px;
+                height: 1px;
+                background-color: white;
+            }
+        }
+
+        #circle{
+            position: absolute;
+            top:-40%;
+            right: 40%;
+            width: 100px;
+            z-index: -1;
+        }
+    }
+
+    /*Contact*/
+    .contact{
+        position: relative;
+
+        h2{
+            margin-top: 1.8em;
+            margin-bottom: 1.8em;
+        }
+
+        #square{
+            top:-15%;
+            right: 17%;
+            width: 200px;
+            transform: rotate(40deg);
+        }
+        
+        .wrapper{
+            display: flex;
+            flex-flow:row wrap;
+            justify-content:space-between;
+
+            .info{
+                width: 35%;
+                padding: 2em;
+                min-width:180px;
+                max-width: 330px;
+                background-color: $mainColor;
+                color:white;
+                border-radius: .5em;
+
+                p{
+                    line-height: 0.45em;
+                    font-weight: 300;
+                    margin-bottom: 0.4em;
+                }
+                
+                .column{
+                    &:nth-of-type(2),&:nth-of-type(3){
+                        margin-top: 2em;
+                    }
+
+                    .heading{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-size: 1.1em;
+    
+                        h4{
+                            margin-left: .5em;
+                            margin-top:0.1em;
+                            margin-bottom:0;
+                            font-size: 1.1em;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+
+            .form{
+                width: 40%;
+                min-width: 300px;
+				max-width: 500px;
+				box-sizing: border-box;
+                overflow: hidden;
+
+                input,textarea{
+                    padding: .8em;
+                    font-size: 1em;
+                    display: block;
+                    width: 100%;
+                    box-sizing: border-box;
+                    border:0.09em solid #ccc;
+                    border-radius: .3em;
+                    outline: none;
+                    font-family: inherit;
+                    -webkit-box-shadow: 0px 2px 7px -5px #000000; 
+                    box-shadow: 0px 2px 7px -5px #000000;
+					margin: 1em 0;
+                }
+
+                textarea{
+                    height: 10em;
+                }
+
+                input:first-of-type{
+                    margin-top: 0;
+                }
+
+                .send{
+                    background-color: $mainColor;
+                    color: white;
+                    width: auto;
+                    display: inline-block;
+                    margin-top: 1.5em;
+                    padding: 1em 3em;
+                    -webkit-box-shadow: 0px 2px 7px -5px #000000; 
+                    box-shadow: 0px 2px 7px -5px #000000;
+                    border-radius: .3em;
+                    border: none;
+
+                    a{
+                        color:white;
+                        text-decoration: none;
+                        position: relative;
+                        margin-left: 0.5em;
+
+                        &::after{
+                            content: '';
+                            width: 25px;
+                            height: 1px;
+                            background-color: black;
+                            position: absolute;
+                            top:47%;
+                            right: -100%;
+                        }
+                    }
+                    
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }       
+}
+
+/*Media queries*/
+@media screen and (max-width:1100px){
+    .homeView{
+        background-position: 
+            top 35% left 0,
+            top 80% left 0 !important;
+
+        background-size: 
+            150%,
+            150% !important;
+
+        /*about us section*/
+        .rentalOffer{
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        /*about us section*/
+        .aboutUs{
+            #square{
+                top:0;
+            }
+		}
+		
+		.certificates{
+			.card-container{
+				margin-top: 3em;
+			}
+		}
+    }
+}
+
+@media screen and (max-width:950px){
+	/*certificates section*/
+	.homeView{
+        background-position: 
+        top 27% left 0,
+        top 80% left 0 !important;
+
+        background-size: 
+            150%,
+            150% !important;
+
+		.certificates{
+			.card-container{
+				justify-content: flex-start !important;
+	
+				.card{
+					flex-basis: calc(100% / 2) !important;
+					max-width: 47%;
+					min-width: 205px !important;
+					margin:3%;
+					box-sizing: border-box;
+				}
+	
+				.card:nth-of-type(1),.card:nth-of-type(3){
+					margin-left: 0;
+				}
+	
+				.card:nth-of-type(1){
+					margin-top: 0;
+				}
+	
+				.card:nth-of-type(2){
+					margin-right: 0;
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:830px){
+    .homeView{
+		.aboutUs{
+             margin-top: 4em;
+			.text{
+				margin-left: 0;
+			}
+
+			#square{
+				width: 140px;
+			}
+		}
+
+		.portfolio{
+			#square{
+				right: 0;
+				top: -20%;
+			}
+		}
+
+        .contact{
+            padding-top: 16em;
+			#square{
+				width: 120px;
+				top:0;
+				right: 20%;
+			}
+
+			h2{
+				margin-bottom: 1em;
+			}
+
+            .wrapper{
+                flex-direction: column;
+
+                .info{
+                    width: 100%;
+                    max-width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 1em;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    box-sizing: border-box;
+                    .column{
+                        margin-top: 0 !important;
+                        margin:0.5em;
+                    }
+                }
+
+                .form{
+                    width: 100%;
+                    margin-top: 2em;
+                    max-width: 100%;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:550px){
+	.homeView{
+        background-image: none;
+
+		.rentalOffer{
+			display: none;
+		}
+
+		.aboutUs{
+			.text{
+				max-width: 100%;
+			}
+
+			#square{
+				width: 100px;
+			}
+		}
+
+		.certificates{
+			.card-container{
+				flex-direction: column;
+				align-items: center;
+
+				.card{
+					width: 100%;
+					max-width: 100%;
+					margin: 0;
+				}
+
+				.card:nth-of-type(2){
+					margin-top: 2em;
+					margin-bottom: 2em;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:425px){
+    .homeView{
+		.certificates{
+			.card-container{
+				.card{
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+		}
+
+        .contact{
+            .wrapper{
+                .info{
+					flex-direction: column;
+
+                    .column{
+                        margin: 0.5em;
+					}
+					
+					.column:nth-child(2){
+						margin-top: .5em !important;
+						margin-bottom: 1em !important;
+					}
+        
+				}
+				
+				.form{
+					min-width: 100%;
+                    overflow: hidden;
+
+					.send{
+						width: 100%;
+						box-sizing: border-box;
+						text-align: center;
+                        position: relative;	
+                        
+						a::after{
+							display: none;
+						}
+					}
+				}
+            }
+        }
+    }
+}
+
+

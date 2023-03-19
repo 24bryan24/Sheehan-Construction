@@ -1,0 +1,42 @@
+---
+import PortfolioItem from "../../components/PortfolioItem.jsx";
+import "../../components/App.scss";
+import Layout from "../../layouts/Page.astro";
+import Container from "../../components/Container.astro";
+
+import { getAllPortfolio } from "../../lib/api.js";
+
+const path = Astro.url.pathname;
+const paths = path.split("/");
+const titleSEOlowercase = paths[paths.length - 1];
+
+const titleSEO =
+  titleSEOlowercase.charAt(0).toUpperCase() + titleSEOlowercase.slice(1);
+
+const seo = {
+  title: titleSEO,
+  description:
+    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+};
+
+export async function getStaticPaths() {
+  const portfolioDataAll = await getAllPortfolio();
+  return portfolioDataAll.map((item) => ({
+    params: { slug: item.slug.current },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const portfolioDataAll = await getAllPortfolio();
+const portfolioData = portfolioDataAll.filter(
+  (portfolio) => portfolio.slug.current === slug
+);
+---
+
+<Layout seo={seo}>
+  <Container />
+  <div className="page">
+    <PortfolioItem client:idle portfolioData={portfolioData} />
+  </div>
+</Layout>
